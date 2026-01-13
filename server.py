@@ -16,7 +16,11 @@ def emotion_detection():
     sadness = response['sadness']
     dominant_emotion = response['dominant_emotion']
 
-    return_response = f"For the given statement, the system response is 'anger': {anger}, 'disgust': {disgust}, 'fear': {fear}, 'joy': {joy} and 'sadness': {sadness}. The dominant emotion is {dominant_emotion}."    
+    if dominant_emotion:
+        return_response = f"For the given statement, the system response is 'anger': {anger}, 'disgust': {disgust}, 'fear': {fear}, 'joy': {joy} and 'sadness': {sadness}. The dominant emotion is {dominant_emotion}."    
+    else:
+        return_response = "Invalid text! Please try again!"
+
     return return_response
 
 
